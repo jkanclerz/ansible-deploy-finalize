@@ -1,0 +1,9 @@
+- name: running finalization command
+  shell: "{{item}}"
+  sudo: yes
+  with_items: deploy.finalize.commands
+
+- name: restarting services
+  service: name="{{item}}" state=restarted
+  sudo: yes
+  with_items: deploy.finalize.to_be_restarted_services
