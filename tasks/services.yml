@@ -2,8 +2,10 @@
   shell: "{{item}}"
   sudo: yes
   with_items: deploy.finalize.commands
+  ignore_errors: True
 
 - name: restarting services
   service: name="{{item}}" state=restarted
   sudo: yes
   with_items: deploy.finalize.to_be_restarted_services
+  ignore_errors: True
