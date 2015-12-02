@@ -1,0 +1,4 @@
+---
+deploy:
+  finalize:
+    required_sudo: yes
