@@ -2,4 +2,4 @@
 - include: create_symlink.yml
 - include: remove_previous.yml
 - include: cleanup.yml
-- include: services.yml
+#- include: services.yml
