@@ -1,6 +1,12 @@
 ---
-- name: Create symlink
+- name: Create symlink current
   file:
     state=link force=yes
-    src={{deploy.project.root}}/releases/{{project_deploy_date.stdout}}
+    src={{deploy.project.root}}/releases/{{next_release}}
     path={{deploy.project.root}}/current
+
+- name: Create symlink preview
+  file:
+    state=link force=yes
+    src={{deploy.project.root}}/releases/{{current_release}}
+    path={{deploy.project.root}}/preview
