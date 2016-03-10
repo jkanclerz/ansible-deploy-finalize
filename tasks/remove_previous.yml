@@ -1,6 +1,6 @@
 ---
 - name: Remove previos releases
-  shell: ls -1tr | head -n -{{deploy.project.keep_previous_releases}} | xargs -d '\n' rm -rf
+  shell: ls -1tr | sort | head -n -{{deploy.project.keep_previous_releases}} | xargs -d '\n' rm -rf
   args:
     chdir: "{{deploy.project.root}}/releases"
   ignore_errors: yes
