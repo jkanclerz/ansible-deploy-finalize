@@ -1,11 +1,11 @@
 - name: running finalization command
   shell: "{{item}}"
-  sudo: yes
+  become: yes
   with_items: "{{deploy.finalize.commands}}"
   when: deploy.finalize.required_sudo == True
 
 - name: restarting services
   service: name="{{item}}" state=restarted
-  sudo: yes
+  become: yes
   with_items: "{{deploy.finalize.to_be_restarted_services}}"
   when: deploy.finalize.required_sudo == True
