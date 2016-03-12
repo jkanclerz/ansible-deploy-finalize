@@ -41,7 +41,7 @@
 
 - name: Ensure writable directory recurse
   file:
-    path={{deploy.project.root}}/releases/{{project_deploy_date.stdout}}/{{item}}
+    path={{deploy.project.root}}/releases/{{project_deploy_date.stdout}}/{{item.src}}
     state=directory
     mode=0777
     recurse=yes
@@ -52,7 +52,7 @@
 
 - name: Ensure writable directory
   file:
-    path={{deploy.project.root}}/releases/{{project_deploy_date.stdout}}/{{item}}
+    path={{deploy.project.root}}/releases/{{project_deploy_date.stdout}}/{{item.src}}
     state=directory
     mode=0777
   with_items: "{{deploy.project.writable_dirs}}"
