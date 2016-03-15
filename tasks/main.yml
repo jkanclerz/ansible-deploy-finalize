@@ -1,5 +1,4 @@
 ---
-- include: ensure_writables.yml
 - include: create_symlink.yml
 - include: remove_previous.yml
 - include: cleanup.yml
