@@ -5,8 +5,8 @@
     src={{deploy.project.root}}/releases/{{next_release}}
     path={{deploy.project.root}}/current
 
-- name: Create symlink preview
+- name: Create symlink previous
   file:
     state=link force=yes
     src={{deploy.project.root}}/releases/{{current_release}}
-    path={{deploy.project.root}}/preview
+    path={{deploy.project.root}}/previous
