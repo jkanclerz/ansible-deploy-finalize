@@ -10,4 +10,4 @@
     state=link force=yes
     src={{deploy.project.root}}/releases/{{current_release}}
     path={{deploy.project.root}}/previous
-    when: current_release is defined
+  when: current_release is defined
