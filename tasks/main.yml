@@ -1,6 +1,10 @@
 ---
+- name: Define variables.
+  set_fact:
+    create_release_symlink_task: "{{ __create_release_symlink_task }}"
+  when: create_release_symlink_task is not defined
 - include: ensure_writables.yml
-- include: create_symlink.yml
+- include: "{{create_release_symlink_task}}"
 - include: remove_previous.yml
 - include: cleanup.yml
 - include: services.yml
