@@ -4,6 +4,11 @@
   with_items: "{{deploy.finalize.commands}}"
   when: deploy.finalize.required_sudo == True
 
+- name: running finalization command
+  shell: "{{item}}"
+  with_items: "{{deploy.finalize.commands}}"
+  when: deploy.finalize.required_sudo == False
+
 - name: restarting services
   service: name="{{item}}" state=restarted
   become: yes
